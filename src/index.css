@@ -2,12 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* إعدادات الخط - هذا مهم للكتابة */
+* {
+  font-family: 'El Messiri', sans-serif;
+}
+
+/* إعدادات الوضع الليلي - هذا مهم للخلفية */
+html.dark {
+  background-color: #1b1b1b;
+}
+
+html.dark body {
+  background-color: #1b1b1b;
+  color: #e0e0e0;
+}
+
+/* تأكد من أن body يأخذ كامل الارتفاع */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Custom styles from your HTML */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #2d2d2d;
 }
 ::-webkit-scrollbar-thumb {
   background: #8e44ad;
@@ -36,4 +62,21 @@
 }
 .dark .bg-grid-pattern {
   background-image: radial-gradient(circle, #444 1px, transparent 1px);
+}
+
+/* إصلاح للعناصر التي لا تأخذ اللون الداكن */
+.dark .bg-white {
+  background-color: #2d2d2d;
+}
+
+.dark .text-gray-800 {
+  color: #e0e0e0;
+}
+
+.dark .text-gray-600 {
+  color: #a0a0a0;
+}
+
+.dark .border-gray-200 {
+  border-color: #444;
 }
